@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "REMERA",
+    "description": "Camiseta oficial del equipo",
+    "code": "CAM123",
+    "price": 25,
+    "status": true,
+    "stock": 50,
+    "category": "Ropa",
+    "thumbnails": []
+  },
+  {
+    "id": 2,
+    "title": "Camiseta Barcelona 2024",
+    "description": "Camiseta oficial del FC Barcelona para la temporada 2024.",
+    "code": "BAR2024H",
+    "price": 84.99,
+    "status": true,
+    "stock": 40,
+    "category": "Fútbol",
+    "thumbnails": ""
+  },
+  {
+    "id": 3,
+    "title": "Camiseta Manchester United 2024",
+    "description": "Camiseta oficial del Manchester United para la temporada 2024.",
+    "code": "MU2024H",
+    "price": 79.99,
+    "status": true,
+    "stock": 35,
+    "category": "Fútbol",
+    "thumbnails": ""
+  },
+  {
+    "id": 4,
+    "title": "Camiseta PSG 2024",
+    "description": "Camiseta oficial del Paris Saint-Germain para la temporada 2024.",
+    "code": "PSG2024H",
+    "price": 89.99,
+    "status": true,
+    "stock": 30,
+    "category": "Fútbol",
+    "thumbnails": ""
+  },
+  {
+    "id": 5,
+    "title": "Camiseta Juventus 2024",
+    "description": "Camiseta oficial de la Juventus para la temporada 2024.",
+    "code": "JUV2024H",
+    "price": 79.99,
+    "status": true,
+    "stock": 25,
+    "category": "Fútbol",
+    "thumbnails": ""
+  }
+]
