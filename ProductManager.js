@@ -36,14 +36,14 @@ class ProductManager{
         }
     }
 
-    postProduct = async (title, description, code, price, status = true, stock, category, thumbnails = []) => {
+    postProduct = async ({title, description, code, price, status = true, stock, category, thumbnails = []}) => {
         try {
             
             const fileData = await fs.promises.readFile(this.pathFile, "utf-8");
             const data = JSON.parse(fileData);
     
             
-            if (!title || !description || !code || price === undefined || status === undefined || stock === undefined || !category) {
+            if (!title || !description || !code || price === undefined || stock === undefined || !category) {
                 throw new Error("Todos los campos son obligatorios excepto thumbnails.");
             }
 
@@ -98,24 +98,26 @@ class ProductManager{
         }
     }
 
-    deleteProduct=async(pid)=>{
+    deleteProduct = async (pid) => {
         try {
-            const fileData = await fs.promises.readFile(this.pathFile, "utf-8")
-            const data= JSON.parse(fileData);
-            const index = data.findIndex((p)=>p.id===pid);
-            if (index===-1) {
+            const fileData = await fs.promises.readFile(this.pathFile, "utf-8");
+            const data = JSON.parse(fileData);
+    
+            const index = data.findIndex((p) => String(p.id) === String(pid));
+    
+            if (index === -1) {
                 throw new Error("ID no existente");
             }
-
-            const dataFiltrada= data.filter((d)=>d.id!==pid)
-
-            await fs.promises.writeFile(this.pathFile, JSON.stringify(dataFiltrada, null, 2))
-
+    
+            const dataFiltrada = data.filter((d) => String(d.id) !== String(pid));
+    
+            await fs.promises.writeFile(this.pathFile, JSON.stringify(dataFiltrada, null, 2));
+    
             return dataFiltrada;
         } catch (error) {
-            throw new Error(`Error al leer el archivo de productos: ${error.message}`)
+            throw new Error(`Error al leer el archivo de productos: ${error.message}`);
         }
-    }
+    };
 
 }
 export default ProductManager;

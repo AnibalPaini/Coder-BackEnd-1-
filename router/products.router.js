@@ -2,13 +2,14 @@ import express from "express";
 import ProductManager from "../ProductManager.js";
 
 const productsRouter=express.Router();
-const productManager= new ProductManager("./data/products.json");
+const productManager= new ProductManager("./src/data/products.json");
 
 productsRouter.get("/", async (req, res)=>{
     try {
         const data= await productManager.getProduct()
         res.status(200).send(data)
     } catch (error) {
+        console.error("Error al obtener productos:", error);
         res.status(500).send({mesagge:"No se encuentra el archivo"})
     }
 });
@@ -29,7 +30,7 @@ productsRouter.get("/:pid", async(req, res)=>{
 
 productsRouter.post("/", async (req, res)=>{
     try {
-        const { title, description, code, price, status, stock, category, thumbnails=[] } = req.body;
+        const { title, description, code, price, status=true, stock, category, thumbnails=[] } = req.body;
         const newProduct= await productManager.postProduct(title, description, code, price, status, stock, category, thumbnails)
         res.status(201).send(newProduct)
     } catch (error) {

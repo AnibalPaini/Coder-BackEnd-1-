@@ -20,5 +20,14 @@
         "quantity": 3
       }
     ]
+  },
+  {
+    "id": 3,
+    "products": [
+      {
+        "id": 2,
+        "quantity": 3
+      }
+    ]
   }
 ]
