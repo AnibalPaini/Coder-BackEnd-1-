@@ -42,16 +42,5 @@
     "stock": 30,
     "category": "Fútbol",
     "thumbnails": ""
-  },
-  {
-    "id": 5,
-    "title": "Camiseta Juventus 2024",
-    "description": "Camiseta oficial de la Juventus para la temporada 2024.",
-    "code": "JUV2024H",
-    "price": 79.99,
-    "status": true,
-    "stock": 25,
-    "category": "Fútbol",
-    "thumbnails": ""
   }
 ]

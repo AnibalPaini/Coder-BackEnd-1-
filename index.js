@@ -43,7 +43,6 @@ io.on("connection",(socket)=>{
 
     socket.on("deleteProduct", async (productId) => {
         try {
-            console.log(typeof productId, productId); 
             const updatedProducts = await productManager.deleteProduct(productId);
             io.emit("updateProducts", updatedProducts);
         } catch (error) {
