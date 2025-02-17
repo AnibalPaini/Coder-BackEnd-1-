@@ -43,7 +43,7 @@ class ProductManager{
             const data = JSON.parse(fileData);
     
             
-            if (!title || !description || !code || price === undefined || stock === undefined || !category) {
+            if (!title || !description || !code || price === "" || stock === "" || !category) {
                 throw new Error("Todos los campos son obligatorios excepto thumbnails.");
             }
 

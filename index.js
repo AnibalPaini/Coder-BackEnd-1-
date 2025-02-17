@@ -34,7 +34,6 @@ io.on("connection",(socket)=>{
     socket.on("newProduct", async (productData)=>{
         try {
             const newProduct= await productManager.postProduct(productData);
-
             io.emit("productAdded", newProduct)
         } catch (error) {
             console.error("Error al añadir producto: "+ error.message);
